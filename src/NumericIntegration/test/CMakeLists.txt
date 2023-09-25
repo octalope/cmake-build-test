@@ -1,6 +1,10 @@
 ###########################################################
 # Google Test
 
+# GoogleTest requires at least C++14
+set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
 include(FetchContent)
 FetchContent_Declare(
   googletest
@@ -24,7 +28,7 @@ target_link_libraries(
   GTest::gtest_main
 )
 target_compile_options(numinteg_test PRIVATE -Wall -pedantic)
-target_link_options(numinteg_test PRIVATE -Wl,-ld_classic) 
+target_link_options(numinteg_test PRIVATE -Wl,-ld_classic)
 
 include(GoogleTest)
 gtest_discover_tests(numinteg_test)
