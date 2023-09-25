@@ -9,7 +9,7 @@ add_executable(mainapp src/main.cpp)
 target_compile_features(mainapp PRIVATE cxx_lambda_init_captures)
 
 target_compile_options(mainapp PRIVATE -Wall -pedantic)
-target_link_options(mainapp PRIVATE -Wl,-ld_classic) 
+target_link_options(mainapp PRIVATE -Wl,-ld_classic)
 
 add_subdirectory(src/NumericIntegration)
 target_link_libraries(mainapp numinteg)
